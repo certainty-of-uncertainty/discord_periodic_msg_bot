@@ -1,0 +1,2 @@
+language = "python3"
+run = "python send_daily_game_messages.py"
