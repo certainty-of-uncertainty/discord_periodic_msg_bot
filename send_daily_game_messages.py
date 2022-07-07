@@ -42,12 +42,12 @@ class MyClient(commands.Bot):
   @tasks.loop(minutes=1)
   async def SendMessageToFortniteBot(self):
     channel = self.get_channel(int(os.environ['Fortnite_Game_Channel_ID']))
-    await channel.trigger_typing()
-    message = await channel.send("/claim-daily", delete_after=60)
+    self.invoke()
+    message = await channel.send("/claim-daily")
     await self.process_commands(message)
     time.sleep(10)
     await channel.trigger_typing()
-    message = await channel.send("/research collect", delete_after=60)
+    message = await channel.send("/research collect")
     await self.process_commands(message)
     time.sleep(10)
 
